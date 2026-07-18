@@ -113,5 +113,6 @@ python/antiprism_wrap.cc
 /python/distutils/lib_src
 /build
 /install
+/vcpkg
 
 
