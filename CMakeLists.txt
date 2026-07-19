@@ -514,6 +514,33 @@ list(APPEND ANTIPRISM_BIN_SRC_BRAVAIS ${CMAKE_CURRENT_LIST_DIR}/src/color_common
 list(APPEND ANTIPRISM_BIN_SRC_BRAVAIS ${CMAKE_CURRENT_LIST_DIR}/src/lat_util_common.h)
 list(APPEND ANTIPRISM_BIN_SRC_BRAVAIS ${CMAKE_CURRENT_LIST_DIR}/src/color_common.h)
 
+set(ANTIPRISM_BIN_SRC_SPIDRON )
+list(APPEND ANTIPRISM_BIN_SRC_SPIDRON ${CMAKE_CURRENT_LIST_DIR}/src_extra/spidron.cc)
+
+set(ANTIPRISM_BIN_SRC_DOME_LAYER )
+list(APPEND ANTIPRISM_BIN_SRC_DOME_LAYER ${CMAKE_CURRENT_LIST_DIR}/src_extra/dome_layer.cc)
+
+set(ANTIPRISM_BIN_SRC_POLY_WEAVE )
+list(APPEND ANTIPRISM_BIN_SRC_POLY_WEAVE ${CMAKE_CURRENT_LIST_DIR}/src_extra/poly_weave.cc)
+
+set(ANTIPRISM_BIN_SRC_MMOP_ORIGAMI )
+list(APPEND ANTIPRISM_BIN_SRC_MMOP_ORIGAMI ${CMAKE_CURRENT_LIST_DIR}/src_extra/mmop_origami.cc)
+
+set(ANTIPRISM_BIN_SRC_JITTERBUG )
+list(APPEND ANTIPRISM_BIN_SRC_JITTERBUG ${CMAKE_CURRENT_LIST_DIR}/src_extra/jitterbug.cc)
+
+set(ANTIPRISM_BIN_SRC_STRING_ART )
+list(APPEND ANTIPRISM_BIN_SRC_STRING_ART ${CMAKE_CURRENT_LIST_DIR}/src_extra/string_art.cc)
+
+set(ANTIPRISM_BIN_SRC_ROTEGRITY )
+list(APPEND ANTIPRISM_BIN_SRC_ROTEGRITY ${CMAKE_CURRENT_LIST_DIR}/src_extra/rotegrity.cc)
+
+set(ANTIPRISM_BIN_SRC_SWEEP_EDGES )
+list(APPEND ANTIPRISM_BIN_SRC_SWEEP_EDGES ${CMAKE_CURRENT_LIST_DIR}/src_extra/sweep_edges.cc)
+
+set(ANTIPRISM_BIN_SRC_LAT_GRID )
+list(APPEND ANTIPRISM_BIN_SRC_LAT_GRID ${CMAKE_CURRENT_LIST_DIR}/src_extra/lat_grid.cc)
+
 if ("${ANTIPRISM_BINARIES}" STREQUAL "ON")
     set(FIRST )
     set(ANTIPRISM_BIN )
@@ -630,6 +657,24 @@ if ("${ANTIPRISM_BINARIES}" STREQUAL "ON")
     list(APPEND ANTIPRISM_BIN repel)
     add_executable(bravais ${ANTIPRISM_BIN_SRC_BRAVAIS})
     list(APPEND ANTIPRISM_BIN bravais)
+    add_executable(spidron ${ANTIPRISM_BIN_SRC_SPIDRON})
+    list(APPEND ANTIPRISM_BIN spidron)
+    add_executable(dome_layer ${ANTIPRISM_BIN_SRC_DOME_LAYER})
+    list(APPEND ANTIPRISM_BIN dome_layer)
+    add_executable(poly_weave ${ANTIPRISM_BIN_SRC_POLY_WEAVE})
+    list(APPEND ANTIPRISM_BIN poly_weave)
+    add_executable(mmop_origami ${ANTIPRISM_BIN_SRC_MMOP_ORIGAMI})
+    list(APPEND ANTIPRISM_BIN mmop_origami)
+    add_executable(jitterbug ${ANTIPRISM_BIN_SRC_JITTERBUG})
+    list(APPEND ANTIPRISM_BIN jitterbug)
+    add_executable(string_art ${ANTIPRISM_BIN_SRC_STRING_ART})
+    list(APPEND ANTIPRISM_BIN string_art)
+    add_executable(rotegrity ${ANTIPRISM_BIN_SRC_ROTEGRITY})
+    list(APPEND ANTIPRISM_BIN rotegrity)
+    add_executable(sweep_edges ${ANTIPRISM_BIN_SRC_SWEEP_EDGES})
+    list(APPEND ANTIPRISM_BIN sweep_edges)
+    add_executable(lat_grid ${ANTIPRISM_BIN_SRC_LAT_GRID})
+    list(APPEND ANTIPRISM_BIN lat_grid)
     foreach (BIN IN LISTS ANTIPRISM_BIN)
         add_dependencies(${BIN} libantiprism)
         install(TARGETS ${BIN} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin BUNDLE DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
