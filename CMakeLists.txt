@@ -132,6 +132,9 @@ else()
 endif()
 
 include_directories(${CMAKE_CURRENT_LIST_DIR}/base)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/base/qhull)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/base/tesselator)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/base/muparser)
 
 set(ANTIPRISM_LIB_DEF )
 foreach (DEF IN LISTS ANTIPRISM_DEF)
